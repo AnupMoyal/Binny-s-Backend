@@ -1,12 +1,17 @@
 import mongoose from "mongoose";
 
-const movieSchema = new mongoose.Schema({
-  name: String,
-  description: String,
-  rating: Number,
-  releaseDate: Date,
-  duration: Number,
-  createdAt: { type: Date, default: Date.now }
-});
+const movieSchema = new mongoose.Schema(
+  {
+    name: String,
+    description: String,
+    rating: Number,
+    releaseDate: String,
+    tmdbId: {
+      type: Number,
+      unique: true,
+    },
+  },
+  { timestamps: true }
+);
 
 export default mongoose.model("Movie", movieSchema);
