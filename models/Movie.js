@@ -6,6 +6,8 @@ const movieSchema = new mongoose.Schema(
     description: String,
     rating: Number,
     releaseDate: String,
+    poster: String,
+
     tmdbId: {
       type: Number,
       unique: true,
